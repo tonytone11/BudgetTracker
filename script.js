@@ -65,16 +65,27 @@ document.getElementById("expense-form").addEventListener("submit", (event) => {
         alert(error.message);
     }
     // clears input
-    document.getElementById("expenseDescription").value.trim() = "";
+    document.getElementById("expenseDescription").value = "";
     document.getElementById("expenseAmount").value = "";
 });
 
 // Function to update the Budget interface
 function updateUI() {
-    document.querySelector(".budgetTotal").textContext = `
+    const budgetTotalElement = document.querySelector(".budgetTotal");
+    const incomeElement = document.querySelector(".income");
+    const expensesElement = document.querySelector(".expenses");
+
+    budgetTotalElement.textContent = `
     Total Budget: $${myBudget.getTotalBudget().toFixed(2)}`;
-    document.querySelector(".income").textContext = `
+    incomeElement.textContent = `
     Income: $${myBudget.getTotalIncome().toFixed(2)}`;
-    document.querySelector(".expenses").textContext = `
+    expensesElement.textContent = `
     Expenses: $${myBudget.getTotalExpenses().toFixed(2)}`;
 }
+
+// console.log(myBudget.income);
+// console.log(myBudget.expenses);
+// console.log(myBudget.getTotalIncome());
+// myBudget.addIncome("Job Check", 525.00);
+// myBudget.addExpenses("Lunch", 7.00);
+// updateUI();
