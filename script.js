@@ -43,6 +43,7 @@ document.getElementById("income-form").addEventListener("submit", (event) => {
 
     try {
         myBudget.addIncome(description, amount);
+        addToHistory("Income", description, amount);
         updateUI();
     } catch (error) {
         alert(error.message);
@@ -55,11 +56,12 @@ document.getElementById("income-form").addEventListener("submit", (event) => {
 // Functionality for expenses submission form
 document.getElementById("expense-form").addEventListener("submit", (event) => {
     event.preventDefault();
-    const description = document.getElementById("expenseDescription").value.trim();
+    const description = document.getElementById("expenseDescription").value;
     const amount = parseFloat(document.getElementById("expenseAmount").value);
 
     try {
         myBudget.addExpenses(description, amount);
+        addToHistory("Expense", description, amount);
         updateUI();
     } catch (error) {
         alert(error.message);
@@ -81,6 +83,16 @@ function updateUI() {
     Income: $${myBudget.getTotalIncome().toFixed(2)}`;
     expensesElement.textContent = `
     Expenses: $${myBudget.getTotalExpenses().toFixed(2)}`;
+}
+
+// Function to save the input from Income and Expense into a transaction history
+function addToHistory(type, description, amount) {
+    const transaction = document.querySelector(".transactionList");
+
+    const listItems = document.createElement("li");
+    listItems.textContent = `${type}: ${description} - $${amount.toFixed(2)}`;
+
+    transaction.appendChild(listItems);
 }
 
 // console.log(myBudget.income);
