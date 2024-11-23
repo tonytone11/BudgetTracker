@@ -36,10 +36,10 @@ class Budget { // Will create a Budget class to handle income, expenses, and tot
 const myBudget = new Budget(); // creating a Budget instance
 
 // Functionality for income submission form
-document.getElementsByClassName("income-form").addEventListener("submit", (event) => {
+document.getElementById("income-form").addEventListener("submit", (event) => {
     event.preventDefault();
-    const description = document.getElementsByClassName("incomeDescription").value;
-    const amount = parseFloat(document.getElementsByClassName("incomeAmount").value);
+    const description = document.getElementById("incomeDescription").value;
+    const amount = parseFloat(document.getElementById("incomeAmount").value);
 
     try {
         myBudget.addIncome(description, amount);
@@ -50,10 +50,10 @@ document.getElementsByClassName("income-form").addEventListener("submit", (event
 });
 
 // Functionality for expenses submission form
-document.getElementsByClassName("expenses-form").addEventListener("submit", (event) => {
+document.getElementById("expense-form").addEventListener("submit", (event) => {
     event.preventDefault();
-    const description = document.getElementsByClassName("expenseDescription").value;
-    const amount = parseFloat(document.getElementsByClassName("expenseAmount").value);
+    const description = document.getElementById("expenseDescription")[0].value;
+    const amount = parseFloat(document.getElementById("expenseAmount")[0].value);
 
     try {
         myBudget.addExpenses(description, amount);

@@ -20,25 +20,27 @@
 
         <section class="income-interface">
             <h2> Income </h2>
-            <form class="income-form">
+            <form id="income-form">
                 <label for="incomeDescription"> Description: </label>
-                <input type="text" class="incomeDescription" placeholder="Money Earned">
+                <input type="text" id="incomeDescription" placeholder="Money Earned">
 
                 <label for="incomeAmount"> Amount: </label>
-                <input type="number" class="incomeAmount" placeholder="Amount" required>
+                <input type="number" id="incomeAmount" placeholder="Amount" required>
                 
                 <button type="submit"> Add </button>
+            </form>
         </section>
         <section class="expense-interface">
             <h2> Expense </h2>
-            <form class="expense-form">
+            <form id="expense-form">
                 <label for="expenseDescription"> Description: </label>
-                <input type="text" class="expenseDescription" placeholder="Money Spent">
+                <input type="text" id="expenseDescription" placeholder="Money Spent">
 
                 <label for="expenseAmount"> Amount: </label>
-                <input type="number" class="expenseAmount" placeholder="Amount" required>
+                <input type="number" id="expenseAmount" placeholder="Amount" required>
 
                 <button type="submit"> Add </button>
+            </form>
         </section>
 
         <section class="budgetHistory">
@@ -47,6 +49,6 @@
             </ul>
         </section>
     </main>
-</body>
 <script src="script.js"></script>
+</body>
 </html>
