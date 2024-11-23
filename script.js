@@ -62,3 +62,13 @@ document.getElementsByClassName("expenses-form").addEventListener("submit", (eve
         alert(error.message);
     }
 });
+
+// Function to update the Budget interface
+function updateUI() {
+    document.getElementsByClassName("budgetTotal").textContext = `
+    Total Budget: $${myBudget.getTotalBudget.toFixed(2)}`;
+    document.getElementsByClassName("income").textContext = `
+    Income: $${myBudget.getTotalIncome.toFixed(2)}`;
+    document.getElementsByClassName("expenses").textContext = `
+    Expenses: $${myBudget.getTotalExpenses.toFixed(2)}`;
+}
