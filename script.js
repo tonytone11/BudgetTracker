@@ -47,13 +47,16 @@ document.getElementById("income-form").addEventListener("submit", (event) => {
     } catch (error) {
         alert(error.message);
     }
+    // clears inputs
+    document.getElementById("incomeDescription").value = "";
+    document.getElementById("incomeAmount").value = "";
 });
 
 // Functionality for expenses submission form
 document.getElementById("expense-form").addEventListener("submit", (event) => {
     event.preventDefault();
-    const description = document.getElementById("expenseDescription")[0].value;
-    const amount = parseFloat(document.getElementById("expenseAmount")[0].value);
+    const description = document.getElementById("expenseDescription").value.trim();
+    const amount = parseFloat(document.getElementById("expenseAmount").value);
 
     try {
         myBudget.addExpenses(description, amount);
@@ -61,14 +64,17 @@ document.getElementById("expense-form").addEventListener("submit", (event) => {
     } catch (error) {
         alert(error.message);
     }
+    // clears input
+    document.getElementById("expenseDescription").value.trim() = "";
+    document.getElementById("expenseAmount").value = "";
 });
 
 // Function to update the Budget interface
 function updateUI() {
-    document.getElementsByClassName("budgetTotal").textContext = `
-    Total Budget: $${myBudget.getTotalBudget.toFixed(2)}`;
-    document.getElementsByClassName("income").textContext = `
-    Income: $${myBudget.getTotalIncome.toFixed(2)}`;
-    document.getElementsByClassName("expenses").textContext = `
-    Expenses: $${myBudget.getTotalExpenses.toFixed(2)}`;
+    document.querySelector(".budgetTotal").textContext = `
+    Total Budget: $${myBudget.getTotalBudget().toFixed(2)}`;
+    document.querySelector(".income").textContext = `
+    Income: $${myBudget.getTotalIncome().toFixed(2)}`;
+    document.querySelector(".expenses").textContext = `
+    Expenses: $${myBudget.getTotalExpenses().toFixed(2)}`;
 }
