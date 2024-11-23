@@ -31,3 +31,34 @@ class Budget { // Will create a Budget class to handle income, expenses, and tot
         this.expenses.push({ description, amount });
     }
 }
+
+/* Instantiate Phase */
+const myBudget = new Budget(); // creating a Budget instance
+
+// Functionality for income submission form
+document.getElementsByClassName("income-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const description = document.getElementsByClassName("incomeDescription").value;
+    const amount = parseFloat(document.getElementsByClassName("incomeAmount").value);
+
+    try {
+        myBudget.addIncome(description, amount);
+        updateUI();
+    } catch (error) {
+        alert(error.message);
+    }
+});
+
+// Functionality for expenses submission form
+document.getElementsByClassName("expenses-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const description = document.getElementsByClassName("expenseDescription").value;
+    const amount = parseFloat(document.getElementsByClassName("expenseAmount").value);
+
+    try {
+        myBudget.addExpenses(description, amount);
+        updateUI();
+    } catch (error) {
+        alert(error.message);
+    }
+});
