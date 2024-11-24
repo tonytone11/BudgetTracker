@@ -92,6 +92,11 @@ function addToHistory(type, description, amount) {
     const listItems = document.createElement("li");
     listItems.textContent = `${type}: ${description} - $${amount.toFixed(2)}`;
 
+    if (type.toLowerCase() === "income-history") {
+        listItems.classList.add("income-history");
+    } else if (type.toLowerCase() === "expense-history") {
+        listItems.classList.add("expense-history");
+    }
     transaction.appendChild(listItems);
 }
 
