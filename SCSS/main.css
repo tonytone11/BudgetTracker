@@ -29,7 +29,7 @@ main .income-interface,
 main .expense-interface,
 main .budgetHistory {
   display: flex;
-  background-color: rgba(29, 153, 248, 0.2392156863);
+  background-color: rgba(19, 148, 247, 0.5607843137);
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   padding: 1.5rem 5rem;
@@ -75,11 +75,22 @@ main .budgetHistory {
 main .transactionList {
   list-style: none;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 main .income-item,
 main .expense-item {
   padding: 0.5rem;
   margin: 0.25rem;
   border-radius: 0.125rem;
+  animation: fadeIn 0.5s ease-in-out;
 }
 main .income-item {
   background-color: green;

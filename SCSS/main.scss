@@ -36,7 +36,7 @@ main {
     .expense-interface,
     .budgetHistory {
         display: flex;
-        background-color: #1d99f83d;
+        background-color: #1394f78f;
         border-radius: .5rem;
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         padding: 1.5rem 5rem;
@@ -92,12 +92,26 @@ main {
         list-style: none;
     }
 
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(0);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     .income-item,
     .expense-item {
         padding: .5rem;
         margin: .25rem;
         border-radius: .125rem;
+        animation: fadeIn 0.5s ease-in-out;
     }
+
 
     .income-item {
         background-color: green;
