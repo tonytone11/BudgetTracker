@@ -1,0 +1,88 @@
+$font-stack: Arial, Helvetica, san-serif;
+$primary-color: #6bbaff;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightseagreen;
+    font-family: $font-stack;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.title-container {
+    background-color: #6bbaff;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .budget-interface,
+    .income-interface,
+    .expense-interface,
+    .budgetHistory {
+        display: flex;
+        background-color: #52d3cc;
+        border-radius: .5rem;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        padding: 1.5rem 5rem;
+        margin: 1rem;
+    }
+
+    .budget-interface h2 {
+        margin: 0 1.5rem 0 0;
+    }
+
+    .budget-interface div {
+        font-size: 1.125rem;
+        padding: 0 .5rem;
+    }
+
+    .income-interface h2,
+    .expense-interface h2 {
+        display: flex;
+        align-items: center;
+        margin: 0 3rem 0 0;
+    }
+
+    #income-form label,
+    #expense-form label {
+        display: flex;
+    }
+
+    #income-form input,
+    #expense-form input {
+        padding: .25rem .375rem;
+        border: none;
+    }
+
+    button {
+        display: flex;
+        padding: .2rem 1rem;
+        margin: 1rem auto;
+        border: none;
+        border-radius: .125rem;
+    }
+
+    button:hover {
+        background-color: gray;
+    }
+
+    .budgetHistory {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .transactionList {
+        list-style: none;
+    }
+}

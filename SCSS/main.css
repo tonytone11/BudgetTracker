@@ -1,1 +1,75 @@
-/*# sourceMappingURL=main.css.map */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: lightseagreen;
+  font-family: Arial, Helvetica, san-serif;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.title-container {
+  background-color: #6bbaff;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .budget-interface,
+main .income-interface,
+main .expense-interface,
+main .budgetHistory {
+  display: flex;
+  background-color: #52d3cc;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 5rem;
+  margin: 1rem;
+}
+main .budget-interface h2 {
+  margin: 0 1.5rem 0 0;
+}
+main .budget-interface div {
+  font-size: 1.125rem;
+  padding: 0 0.5rem;
+}
+main .income-interface h2,
+main .expense-interface h2 {
+  display: flex;
+  align-items: center;
+  margin: 0 3rem 0 0;
+}
+main #income-form label,
+main #expense-form label {
+  display: flex;
+}
+main #income-form input,
+main #expense-form input {
+  padding: 0.25rem 0.375rem;
+  border: none;
+}
+main button {
+  display: flex;
+  padding: 0.2rem 1rem;
+  margin: 1rem auto;
+  border: none;
+  border-radius: 0.125rem;
+}
+main button:hover {
+  background-color: gray;
+}
+main .budgetHistory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .transactionList {
+  list-style: none;
+}/*# sourceMappingURL=main.css.map */
