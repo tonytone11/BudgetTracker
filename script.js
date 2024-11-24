@@ -37,16 +37,16 @@ const myBudget = new Budget(); // creating a Budget instance
 
 // Functionality for income submission form
 document.getElementById("income-form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const description = document.getElementById("incomeDescription").value;
-    const amount = parseFloat(document.getElementById("incomeAmount").value);
+    event.preventDefault(); // prevents page from automatically refreshing
+    const description = document.getElementById("incomeDescription").value; // gets the value of incomeDescription
+    const amount = parseFloat(document.getElementById("incomeAmount").value); // gets the value of incomeAmount and converts to a number
 
     try {
-        myBudget.addIncome(description, amount);
-        addToHistory("Income", description, amount);
-        updateUI();
+        myBudget.addIncome(description, amount); // add the descrip & amount to myBudget
+        addToHistory("Income", description, amount); // add Income to my transaction history
+        updateUI(); // updates budget summary
     } catch (error) {
-        alert(error.message);
+        alert(error.message); // tells you what error I have
     }
     // clears inputs
     document.getElementById("incomeDescription").value = "";
@@ -56,15 +56,15 @@ document.getElementById("income-form").addEventListener("submit", (event) => {
 // Functionality for expenses submission form
 document.getElementById("expense-form").addEventListener("submit", (event) => {
     event.preventDefault();
-    const description = document.getElementById("expenseDescription").value;
-    const amount = parseFloat(document.getElementById("expenseAmount").value);
+    const description = document.getElementById("expenseDescription").value; // add the descrip & amount to myBudget
+    const amount = parseFloat(document.getElementById("expenseAmount").value); // gets the value of incomeAmount and converts to a number
 
     try {
-        myBudget.addExpenses(description, amount);
-        addToHistory("Expense", description, amount);
-        updateUI();
+        myBudget.addExpenses(description, amount); // add the descrip & amount to myBudget
+        addToHistory("Expense", description, amount); // add Income to my transaction history
+        updateUI(); // updates budget summary
     } catch (error) {
-        alert(error.message);
+        alert(error.message); // tells you what error I have
     }
     // clears input
     document.getElementById("expenseDescription").value = "";
@@ -73,10 +73,11 @@ document.getElementById("expense-form").addEventListener("submit", (event) => {
 
 // Function to update the Budget interface
 function updateUI() {
-    const budgetTotalElement = document.querySelector(".budgetTotal");
-    const incomeElement = document.querySelector(".income");
-    const expensesElement = document.querySelector(".expenses");
+    const budgetTotalElement = document.querySelector(".budgetTotal"); // selecting element that displays Total Budget
+    const incomeElement = document.querySelector(".income"); // selecting element that displays Income
+    const expensesElement = document.querySelector(".expenses"); //selecting element that displays Expenses
 
+    // updates text content of Budget, Income, and Expenses
     budgetTotalElement.textContent = `
     Total Budget: $${myBudget.getTotalBudget().toFixed(2)}`;
     incomeElement.textContent = `
@@ -89,15 +90,16 @@ function updateUI() {
 function addToHistory(type, description, amount) {
     const transaction = document.querySelector(".transactionList");
 
-    const listItems = document.createElement("li");
-    listItems.textContent = `${type}: ${description} - $${amount.toFixed(2)}`;
+    const listItems = document.createElement("li"); // creates <li> tag
+    listItems.textContent = `${type}: ${description} - $${amount.toFixed(2)}`; // content that will diaplay in <li> tag
 
+    // if else statement to add specific class for Income and Expenses so I can target them in my stylesheet
     if (type === "Income") {
         listItems.classList.add("income-item");
     } else if (type === "Expense") {
         listItems.classList.add("expense-item");
     }
-    transaction.appendChild(listItems);
+    transaction.appendChild(listItems); // appends the list item to transactionList
 }
 
 // console.log(myBudget.income);
