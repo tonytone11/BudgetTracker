@@ -95,7 +95,7 @@ function addToHistory(type, description, amount) {
     if (type === "Income") {
         listItems.classList.add("income-item");
     } else if (type === "Expense") {
-        listItems.classList.add("expense-list");
+        listItems.classList.add("expense-item");
     }
     transaction.appendChild(listItems);
 }
