@@ -112,12 +112,60 @@ main {
         animation: fadeIn 0.5s ease-in-out;
     }
 
-
     .income-item {
         background-color: green;
     }
 
     .expense-item {
         background-color: red;
+    }
+
+    @media (max-width: 425px) {
+
+        .budget-interface,
+        .income-interface,
+        .expense-interface,
+        .budgetHistory {
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .budget-interface div {
+            font-size: .9rem;
+        }
+
+        .income-item,
+        .expense-item {
+            padding: .25rem;
+            margin: .125rem;
+            font-size: .95rem;
+        }
+    }
+
+    @media (max-width: 320px) {
+
+        .budget-interface,
+        .income-interface,
+        .expense-interface,
+        .budgetHistory {
+            padding: .5rem 0.45rem;
+            margin: .5rem;
+        }
+
+        .budget-interface h2 {
+            font-size: 1rem;
+            margin: 0 1.5rem 0 0;
+        }
+
+        .budget-interface div {
+            font-size: .9rem;
+        }
+
+        .income-item,
+        .expense-item {
+            padding: .25rem;
+            margin: .125rem;
+            font-size: .95rem;
+        }
     }
 }
