@@ -5,7 +5,9 @@
 }
 
 body {
-  background-color: lightseagreen;
+  background: linear-gradient(to bottom, #6bbaff, #9ed2ff);
+  height: 100vh;
+  margin: 0;
   font-family: Arial, Helvetica, san-serif;
   color: #fff;
   line-height: 1.6;
@@ -27,7 +29,7 @@ main .income-interface,
 main .expense-interface,
 main .budgetHistory {
   display: flex;
-  background-color: #52d3cc;
+  background-color: rgba(29, 153, 248, 0.2392156863);
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   padding: 1.5rem 5rem;

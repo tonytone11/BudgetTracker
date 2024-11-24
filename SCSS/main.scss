@@ -7,8 +7,14 @@ $primary-color: #6bbaff;
     padding: 0;
 }
 
+@mixin gradient($color1, $color2) {
+    background: linear-gradient(to bottom, $color1, $color2);
+}
+
 body {
-    background-color: lightseagreen;
+    @include gradient(#6bbaff, #9ed2ff);
+    height: 100vh;
+    margin: 0;
     font-family: $font-stack;
     color: #fff;
     line-height: 1.6;
@@ -30,7 +36,7 @@ main {
     .expense-interface,
     .budgetHistory {
         display: flex;
-        background-color: #52d3cc;
+        background-color: #1d99f83d;
         border-radius: .5rem;
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         padding: 1.5rem 5rem;
